@@ -771,11 +771,13 @@ def internal_error(error):
 # ============================================================================
 
 if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))
     print("🎵 Spotify Wrapped Analysis API v4.0")
     print("=" * 70)
     print("✅ Rating-based recommendations")
     print("✅ User upload for personalized analysis")
     print("=" * 70)
-    print("Starting server on http://localhost:5000")
+    print(f"Starting server on port {port}")
     print("=" * 70)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=port)
